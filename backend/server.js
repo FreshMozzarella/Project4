@@ -13,9 +13,7 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 
-// const productsRouter = require('./routes/product')
-// const categoriesRouter = require('./routes/category')
-// const cartsRouter = require('./routes/cart')
+const birdRouter = require('./routes/bird')
 ///////////////////////////////
 // APP CONFIG
 ////////////////////////////////
@@ -41,14 +39,11 @@ app.use(morgan('dev'))
 ///////////////////////////////
 // ROUTER MIDDELWARE
 ////////////////////////////////
-// app.use('/product', productsRouter)
-// app.use('/category', categoriesRouter)
-// app.use('/cart', cartsRouter)
-// hello world - test route
+app.use('/bird', birdRouter)
 
-app.get('/', (req,res)=>{
-    res.send('hello world')
-})
+// app.get('/', (req,res)=>{
+//     res.send('hello world')
+// })
 
 ///////////////////////////////
 // SERVER 

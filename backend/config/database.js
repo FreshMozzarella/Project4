@@ -9,7 +9,6 @@ async function connectToDatabase() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-      reconnectTries: 5, // Attempt to connect 5 times
     });
 
     console.log("You are connected to mongoose");

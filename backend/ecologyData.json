@@ -1,0 +1,19 @@
+{
+    "speciesName": "Gambel's Quail",
+    "scientificName": "Callipepla gambelii",
+    "family": "New World Quail",
+    "weight": {
+        "min": 5.6,
+        "max": 7.0
+    },
+    "wingspan": {
+        "min": 13.4,
+        "max": 14.2
+    },
+   "distinctiveFeatures": "Plump, volleyball-sized birds with short necks, small bill, and square tail. The wings are short and broad. Both sexes have a comma-shaped topknot of feathers atop their small heads, fuller in males than females. Richly patterned in gray, chestnut, and cream that can serve as excellent camouflage. Males have a bright rufous crest, chestnut flanks striped with white, and creamy belly with black patch. Females are grayer, lacking the strong head pattern. Walks mostly across ground. Flight is short",
+    "bestTimeToSpot": "During morning and evening, during the cooler times of day. Spring and Fall season.",
+    "conservationStatus": "Least Concern",
+    "diet": "Mostly plants. They eat seeds of grasses, shrubs, forbs, trees and cactus, and will pick mesquite seeds from cattle and coyote droppings. They also eat leaves and grass blades. From summer into fall, berries and cactus fruit, including cholla, saguaro, and prickly pear become an important part of the diet. Gamebel’s Quail also eat insects, especially in spring and through the peak of nesting season. Chicks eat only animal matter for the first few days after hatching, including beetles, small worms, moth caterpillars, and grasshoppers",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/GambelsQuail.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/Gambel's+Quail+-+Callipepla+gambelii.mp3" 
+ }
