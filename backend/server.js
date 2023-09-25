@@ -13,6 +13,8 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 
+const plantRouter = require('./routes/plant')
+const animalRouter = require('./routes/animal')
 const birdRouter = require('./routes/bird')
 ///////////////////////////////
 // APP CONFIG
@@ -40,7 +42,8 @@ app.use(morgan('dev'))
 // ROUTER MIDDELWARE
 ////////////////////////////////
 app.use('/bird', birdRouter)
-
+app.use('/animal', animalRouter)
+app.use('/plant', plantRouter)
 // app.get('/', (req,res)=>{
 //     res.send('hello world')
 // })

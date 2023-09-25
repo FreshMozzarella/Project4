@@ -9,5 +9,6 @@
 - AAU I want to be able to click on a bird and bring up a pop up that display more detailed info about the Genus, Species, Average wingspan, average lifespan, and food that they eat
 - AAU I want to see more than birds! I want info on the most common types of animals I will encounter hiking through the park
 - AAU I want to see the most common types of plants/ vegetation that I will encounter! I want to see information about the plant species, family name, genus, plant type, edibility and toxicity.
----
-- ICEBOX AAU  I want to have a search bar for a database for each of the vegetation and plants
+
+#### Icebox 
+- AAU  I want to have a search bar for a database for each of the vegetation and plants

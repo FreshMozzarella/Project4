@@ -395,3 +395,258 @@
     "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC537140+-+Dark-eyed+Junco+-+Junco+hyemalis.mp3"
 }
 
+{
+    "name": "Rock Squirrel",
+    "scientificName": "Otospermophilus variegatus",
+    "family": "Sciuridae",
+    "averageWeightInPounds": 1,
+    "description": "The Rock Squirrel has a long bushy tail with white edges. Its coloration is generally a mix of gray and brown, helping it blend into its rocky surroundings.",
+    "diet": "Omnivorous, eats fruits, seeds, vegetables, nuts, berries, small insects, and eggs.",
+    "habitat": "Rocky habitats, cliffs, and canyon lands.",
+    "behavior": "Diurnal, most active during the early morning and late afternoon, avoiding the midday heat.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Early morning and late afternoon",
+    "location": ["Canyon Overlooks", "Rocky Areas"],
+    "interestingFact": "Rock Squirrels are known to be excellent climbers and are often seen on rock walls and cliffs.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/rockSquirrel.jpg"
+}
+{
+    "name": "Ringtail",
+    "scientificName": "Bassariscus astutus",
+    "family": "Procyonidae",
+    "averageWeightInPounds": 2,
+    "description": "The Ringtail is a small mammal with a fox-like face and a long, bushy, striped tail. Its fur is a mix of grey and brown, with a white underbelly.",
+    "diet": "Omnivorous, eats fruits, insects, small mammals, birds, and lizards.",
+    "habitat": "Rocky, arid regions such as canyons, cliffs, and rocky outcrops.",
+    "behavior": "Nocturnal and solitary. Known for its ability to climb vertical walls and its distinctive 'barking' vocalization.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Nighttime",
+    "location": ["Canyon Walls", "Rocky Outcrops"],
+    "interestingFact": "The Ringtail is also known as the 'Miner's Cat', as miners used to keep them as pets to reduce rodent populations.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/Squaw-ringtail-28073.jpg"
+}
+{
+    "name": "Big Free-tailed Bat",
+    "scientificName": "Nyctinomops macrotis",
+    "family": "Molossidae",
+    "averageWeightInPounds": 0.07,
+    "description": "Big Free-tailed Bats are recognized for their large size and broad, black wings. They have short fur which is brown to grayish brown.",
+    "diet": "Insectivorous, primarily consumes moths but will also eat other flying insects.",
+    "habitat": "Prefers arid regions, often found in mountainous or hilly terrain.",
+    "behavior": "Nocturnal and known for fast, straight flight patterns.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Nighttime, especially around lights where insects gather.",
+    "location": ["Mountainous Regions", "Hilly Areas"],
+    "interestingFact": "Big Free-tailed Bats have a distinctive, musky odor and emit a high-pitched call that is audible to humans.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/FreeTailedBat.jpg"
+}
+{
+    "name": "Pallid Bat",
+    "scientificName": "Antrozous pallidus",
+    "family": "Vespertilionidae",
+    "averageWeightInPounds": 0.88,
+    "description": "The Pallid Bat has large ears, a light coloration, and is known for its distinctive foraging habits, often hunting terrestrial arthropods from the ground.",
+    "diet": "Insectivorous, mainly consumes crickets, scorpions, beetles, and other terrestrial arthropods.",
+    "habitat": "Deserts, grasslands, shrublands, woodlands, and forests.",
+    "behavior": "Nocturnal, roosts in groups during the day in natural shelters such as caves or rock crevices.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Nighttime, especially during warmer months.",
+    "location": ["Desert Areas", "Rocky Outcrops"],
+    "interestingFact": "Pallid Bats are immune to the venom of Arizona bark scorpions, one of their primary food sources.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/600px-Pallid_Bat_(Antrozous_pallidus).jpg"
+}
+{
+    "name": "Silver-haired Bat",
+    "scientificName": "Lasionycteris noctivagans",
+    "family": "Vespertilionidae",
+    "averageWeightInPounds": 0.35,
+    "description": "Silver-haired Bats have black fur tipped with silver, giving them their name. They have a slow, fluttery flight.",
+    "diet": "Insectivorous, prefers moths but will also consume other insects.",
+    "habitat": "Forests, woodlands, and swamps, usually near water.",
+    "behavior": "Nocturnal, solitary, and migratory, roosts in tree cavities, bark, and buildings during the day.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Nighttime, particularly during migration seasons in spring and autumn.",
+    "location": ["Forested Areas", "Near Water Bodies"],
+    "interestingFact": "Despite their slow flight, Silver-haired Bats are adept at maneuvering through dense foliage.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/Silver-haired_bat.JPG"
+}
+{
+    "name": "Canyon Bat",
+    "scientificName": "Parastrellus hesperus",
+    "family": "Vespertilionidae",
+    "averageWeightInPounds": 0.14,
+    "description": "The Canyon Bat, previously known as the Western Pipistrelle, is one of the smallest bats in the United States, with a reddish-brown to pale gray coat.",
+    "diet": "Insectivorous, primarily feeds on small flying insects.",
+    "habitat": "Deserts, rocky canyons, and cliffs.",
+    "behavior": "Nocturnal, often seen fluttering around cliffs and outcrops at dusk.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Dusk and early evening.",
+    "location": ["Canyon Walls", "Rocky Cliffs"],
+    "interestingFact": "Canyon Bats have two periods of activity, one right after sunset and another just before dawn.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/Canyon_Bat.jpg"
+}
+{
+    "name": "Townsend's Big-Eared Bat",
+    "scientificName": "Corynorhinus townsendii",
+    "family": "Vespertilionidae",
+    "averageWeightInPounds": 0.28,
+    "description": "Characterized by its large ears and the lumps, or 'glands,' on its nose, Townsend's Big-Eared Bat has a delicate flight, often hovering like a hummingbird.",
+    "diet": "Insectivorous, prefers moths and consumes a variety of other insects.",
+    "habitat": "Variety of habitats, often roosts in caves, mines, tunnels, and buildings.",
+    "behavior": "Nocturnal, sensitive to disturbance, often found roosting in large colonies.",
+    "conservationStatus": "Least Concern, but populations are declining in many areas due to habitat disturbance.",
+    "bestTimeToSee": "Nighttime, particularly in undisturbed areas.",
+    "location": ["Caves", "Undisturbed Buildings"],
+    "interestingFact": "Townsend's Big-Eared Bats are known for their remarkable ability to maneuver in flight, catching prey directly from surfaces.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/Townsend's_big-eared.jpg"
+}
+{
+    "name": "Gray Fox",
+    "scientificName": "Urocyon cinereoargenteus",
+    "family": "Canidae",
+    "averageWeightInPounds": 11.0,
+    "description": "The Gray Fox is a small, omnivorous canid with salt-and-pepper gray fur, a white underbelly, and a bushy tail with a black stripe.",
+    "diet": "Omnivorous, consumes fruits, nuts, small mammals, birds, and insects.",
+    "habitat": "Mixed woodlands, brushy landscapes, and rugged terrains.",
+    "behavior": "Nocturnal and elusive, known for its ability to climb trees.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Dusk to early morning, particularly in less disturbed areas.",
+    "location": ["Woodlands", "Brushy Areas"],
+    "interestingFact": "Gray Foxes are one of the few canids capable of climbing trees.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/Gray_fox.jpg"
+}
+{
+    "name": "Coyote",
+    "scientificName": "Canis latrans",
+    "family": "Canidae",
+    "averageWeightInPounds": 35.0,
+    "description": "Coyotes have a slender, lean body, a bushy tail, and primarily grayish-brown fur with a white underbelly.",
+    "diet": "Omnivorous, diet includes rodents, rabbits, fruit, plants, and occasionally, larger prey like deer.",
+    "habitat": "Diverse habitats, including deserts, grasslands, and urban areas.",
+    "behavior": "Adaptable and intelligent, often active at night but can be seen during the day.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Dawn and Dusk, can occasionally be seen during the day.",
+    "location": ["Throughout the Park"],
+    "interestingFact": "Coyotes are highly adaptable and have expanded their range across North America.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/coyote.jpg"
+}
+{
+    "name": "Bobcat",
+    "scientificName": "Lynx rufus",
+    "family": "Felidae",
+    "averageWeightInPounds": 22.0,
+    "description": "The Bobcat is a medium-sized wildcat, recognizable by its tufted ears, spotted coat, and short, 'bobbed' tail.",
+    "diet": "Carnivorous, primarily preys on rabbits, hares, rodents, and birds.",
+    "habitat": "Variety of environments, including forests, swamps, and deserts.",
+    "behavior": "Solitary, territorial, and mostly nocturnal.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Early mornings and late evenings.",
+    "location": ["Forest Edges", "Brushy Areas"],
+    "interestingFact": "Bobcats are skilled climbers and will often rest in trees.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/800px-Bobcat_(Lynx_rufus)_portrait.jpg"
+}
+{
+    "name": "Mountain Lion",
+    "scientificName": "Puma concolor",
+    "family": "Felidae",
+    "averageWeightInPounds": 150.0,
+    "description": "Also known as a Cougar or Puma, the Mountain Lion is a large, solitary cat with a tawny coat and long, cylindrical tail with a black tip.",
+    "diet": "Carnivorous, feeds mainly on deer but also consumes smaller mammals.",
+    "habitat": "Wide range of habitats, including forests, mountains, and deserts.",
+    "behavior": "Solitary, territorial, and primarily nocturnal.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Night, though sightings are rare due to their elusive nature.",
+    "location": ["Remote Areas", "Mountainous Regions"],
+    "interestingFact": "Mountain Lions have the largest range of any wild terrestrial mammal in the Western Hemisphere.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/800px-Mountain_lion_(36767015074).jpg"
+}
+{
+    "name": "American Beaver",
+    "scientificName": "Castor canadensis",
+    "family": "Castoridae",
+    "averageWeightInPounds": 44.0,
+    "description": "The American Beaver is the largest rodent in North America, recognized by its large, flat tail, webbed feet, and sharp incisors.",
+    "diet": "Herbivorous, consumes tree bark, aquatic plants, grasses, and shrubs.",
+    "habitat": "Rivers, ponds, and lakes where it builds lodges and dams.",
+    "behavior": "Primarily nocturnal, highly industrious, and known for altering its environment by building dams and lodges.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Evenings near freshwater habitats.",
+    "location": ["Rivers", "Ponds"],
+    "interestingFact": "American Beavers play a crucial role in biodiversity, creating wetlands that provide habitat for a variety of species.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/americanBeaver.jpg"
+}
+{
+    "name": "Porcupine",
+    "scientificName": "Erethizon dorsatum",
+    "family": "Erethizontidae",
+    "averageWeightInPounds": 20,
+    "description": "Porcupines are recognizable by their coat of sharp spines, or quills, which are used as a defense mechanism against predators. They are primarily nocturnal and are good climbers, often found on trees.",
+    "diet": "Herbivore, feeding on leaves, twigs, and green plants like clover.",
+    "habitat": "Forests, deserts, and grasslands.",
+    "behavior": "Generally solitary and nocturnal, often found in trees.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Night, but can occasionally be spotted during the day.",
+    "location": ["Wooded Areas"],
+    "interestingFact": "Porcupines have antibiotics in their skin to prevent infection when they fall out of a tree and get pricked by their own quill.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/porcupine.jpg"
+}
+{
+    "name": "Chipmunk",
+    "scientificName": "Tamias striatus",
+    "family": "Sciuridae",
+    "averageWeightInPounds": 0.125,
+    "description": "Chipmunks are small, striped rodents primarily found in North America. They have expansive cheek pouches for storing food.",
+    "diet": "Omnivore, feeding on seeds, berries, fruits, and insects.",
+    "habitat": "Woodlands, gardens, parks, and shrublands.",
+    "behavior": "Active during the day, especially during the early morning and late afternoon.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Daytime, especially early morning and late afternoon.",
+    "location": ["Wooded Areas", "Meadows"],
+    "interestingFact": "Chipmunks use their cheek pouches to transport food to their burrows.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/chipmunk.jpg"
+}
+{
+    "name": "Pocket Gopher",
+    "scientificName": "Geomys bursarius",
+    "family": "Geomyidae",
+    "averageWeightInPounds": 0.5,
+    "description": "Pocket Gophers are burrowing rodents named for their fur-lined cheek pouches. They have stout bodies with small ears and eyes and large clawed front paws.",
+    "diet": "Herbivore, feeding primarily on plants, roots, and tubers.",
+    "habitat": "Prairies, fields, and gardens.",
+    "behavior": "Solitary, spending most of their time underground.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "They are rarely seen but can be active during day and night.",
+    "location": ["Fields", "Grasslands"],
+    "interestingFact": "Pocket Gophers are named for their external, fur-lined cheek pouches, or 'pockets,' which they use for transporting food.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/Botta's_pocket_gopher_in_Golden_Gate_Park%2C_March_2020.JPG"
+}
+{
+    "name": "Desert Bighorn Sheep",
+    "scientificName": "Ovis canadensis nelsoni",
+    "family": "Bovidae",
+    "averageWeightInPounds": 160,
+    "description": "Desert Bighorn Sheep are known for their large spiral horns. They are well adapted to living in the desert and are often found in mountainous terrain.",
+    "diet": "Herbivore, feeding on grasses, seeds, and leaves.",
+    "habitat": "Desert mountains and canyons.",
+    "behavior": "Very agile and able to climb steep terrain to evade predators.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Early mornings and late afternoons.",
+    "location": ["Mountainous Areas"],
+    "interestingFact": "Males have large horns that can weigh up to 30 pounds.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/800px-Desert_Bighorn_Sheep_(8981484583).jpg"
+}
+{
+    "name": "Mule Deer",
+    "scientificName": "Odocoileus hemionus",
+    "family": "Cervidae",
+    "averageWeightInPounds": 200,
+    "description": "Mule Deer are easily recognizable by their large mule-like ears. They have a black-tipped white tail and antlers that are bifurcated, or branched.",
+    "diet": "Herbivore, primarily eating shrubs, forbs, and grasses.",
+    "habitat": "Deserts, grasslands, and forests.",
+    "behavior": "Primarily active during dawn and dusk. Known for their unique bounding leap when running.",
+    "conservationStatus": "Least Concern",
+    "bestTimeToSee": "Dawn and Dusk.",
+    "location": ["Forests", "Meadows"],
+    "interestingFact": "Mule Deer are known for their 'stotting' or 'pronking,' a behavior in which they leap with all four feet off the ground.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/animal-media/532px-2012-mule-deer-male.jpg"
+}
