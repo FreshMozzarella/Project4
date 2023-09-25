@@ -9,10 +9,7 @@ const birdSchema = new Schema ({
         min: Number,
         max: Number
     },
-    wingspan: {
-        min: Number,
-        max: Number
-    },
+    wingspan: Number,
     distinctiveFeatures: String,
     bestTimeToSpot: String,
     conservationStatus: String,

@@ -6,14 +6,392 @@
         "min": 5.6,
         "max": 7.0
     },
-    "wingspan": {
-        "min": 13.4,
-        "max": 14.2
-    },
-   "distinctiveFeatures": "Plump, volleyball-sized birds with short necks, small bill, and square tail. The wings are short and broad. Both sexes have a comma-shaped topknot of feathers atop their small heads, fuller in males than females. Richly patterned in gray, chestnut, and cream that can serve as excellent camouflage. Males have a bright rufous crest, chestnut flanks striped with white, and creamy belly with black patch. Females are grayer, lacking the strong head pattern. Walks mostly across ground. Flight is short",
+    "wingspan": 14.2,
+    "distinctiveFeatures": "These birds are robust, volleyball-sized with intricate patterns of grey, chestnut, and cream, serving as excellent camouflage. Males are more vibrant with a rufous crest and chestnut flanks, while females are predominantly grey; they prefer walking and undertake short flights.",
     "bestTimeToSpot": "During morning and evening, during the cooler times of day. Spring and Fall season.",
     "conservationStatus": "Least Concern",
-    "diet": "Mostly plants. They eat seeds of grasses, shrubs, forbs, trees and cactus, and will pick mesquite seeds from cattle and coyote droppings. They also eat leaves and grass blades. From summer into fall, berries and cactus fruit, including cholla, saguaro, and prickly pear become an important part of the diet. Gamebel’s Quail also eat insects, especially in spring and through the peak of nesting season. Chicks eat only animal matter for the first few days after hatching, including beetles, small worms, moth caterpillars, and grasshoppers",
+    "diet": "Seeds, leaves, berries, cacti fruits, and insects, extracting seeds even from other animals' droppings. Insects are significant in their diet during spring and nesting seasons, while chicks rely on animal matter like beetles and worms in their initial days.",
     "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/GambelsQuail.jpg",
-    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/Gambel's+Quail+-+Callipepla+gambelii.mp3" 
- }
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/Gambel's+Quail+-+Callipepla+gambelii.mp3"
+}
+
+ {
+    "speciesName": "Greater Roadrunner",
+ "scientificName": "Geococcyx californianus",
+ "family": "Cuckoos",
+ "weight": {
+     "min": 7.8,
+     "max": 19.0
+ },
+ "wingspan": 19.3,
+ "distinctiveFeatures": "Large, ground-dwelling cuckoos with long legs and tails, displaying tan or brown color with black streaking and prefer running over flying. They are distinguished by their speed and can occasionally be seen perched high above the ground.",
+ "bestTimeToSpot": "During Summer, sunrise to mid-morning, and late afternoon to evening.  Spotting a roadrunner can prove to be a rare and challenging occurrence. To enhance the chances of spotting, one can listen for their unique, dovelike, low-pitched cooing sounds.",
+ "conservationStatus": "Least Concern",
+ "diet": "Consume plants including seeds from various flora and foliage, and forage for berries and cactus fruit in summer and fall. They also consume insects, particularly during spring and nesting seasons. Chicks, for the first few days, feed exclusively on animal matter such as beetles, worms, and caterpillars.",
+ "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/GreaterRoadrunner.jpg",
+ "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/Greater+Roadrunner+-+Geococcyx+californianus.mp3"
+}
+
+{
+    "speciesName": "California Condor",
+ "scientificName": "Gymnogyps californianus",
+ "family": "New World vultures",
+ "weight": {
+     "min": 246.9,
+     "max": 349.2
+ },
+ "wingspan": 109.1,
+ "distinctiveFeatures": "largest wild birds in North America, recognized for their expansive wings and stable soaring capabilities. They exhibit distinctive coloring with adults having black bodies and yellowish-orange heads, while the young display darker, greyer tones.",
+ "bestTimeToSpot": "Early morning or evening, spring to early fall. Do not approach if you see one close by. Watch from a distance. Do not appraoch or offer food.",
+ "conservationStatus": "Citrically Endangered",
+ "diet": "consume the remains of terrestrial and marine animals, including deer, cattle, pigs, rabbits, sea lions, and whales. To fulfill their calcium requirements, they ingest fragments of bones and marine shells.",
+ "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/jeffrey-eisen-N6Iw5TB2FL8-unsplash.jpg",
+ "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/CaliforniaCondor.mp3"
+}
+
+{
+    "speciesName": "Peregrine Falcon",
+    "scientificName": "Falco peregrinus",
+    "family": "Falcons",
+    "weight": {
+        "min": 18.7,
+        "max": 56.4
+    },
+    "wingspan": 43.3,
+    "distinctiveFeatures": "Peregrine Falcons are powerfully built birds of prey, marked by a distinct combination of grayish-blue and barred white on the underside. Recognized for their intense velocity, they are armed with pointed wings and a stout body structure.",
+    "bestTimeToSpot": "Early morning or late evening around cliffs or tall buildings.",
+    "conservationStatus": "Least Concern",
+    "diet": "Mainly birds, occasionally bats and, rarely, small mammals, small reptiles, or insects.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/ian-tuck-BAbYVZQ54mY-unsplash.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC291159+-+Peregrine+Falcon+-+Falco+peregrinus.mp3"
+},
+{
+    "speciesName": "Common Raven",
+    "scientificName": "Corvus corax",
+    "family": "Ravens",
+    "weight": {
+        "min": 24.3,
+        "max": 57.3
+    },
+    "wingspan": 46.5,
+    "distinctiveFeatures": "Common Ravens are substantial black birds, possessing an iridescent sheen to their plumage, characterized by their sturdy bills and wedge-shaped tails. Known for their acrobatic flights, these intelligent birds can often be seen engaging in aerial displays or exploring their surroundings.",
+    "bestTimeToSpot": "Most active during the day, year-round.",
+    "conservationStatus": "Least Concern",
+    "diet": "Omnivorous, consuming fruits, grains, small animals, and carrion.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/brian-wangenheim-4yVxFqgXcag-unsplash.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC809245+-+Northern+Raven+-+Corvus+corax.mp3"
+},
+{
+    "speciesName": "American Dipper",
+    "scientificName": "Cinclus mexicanus",
+    "family": "Dippers",
+    "weight": {
+        "min": 1.5,
+        "max": 2.4
+    },
+    "wingspan": 11,
+    "distinctiveFeatures": "American Dippers are unique aquatic songbirds with neutral gray plumage, notable for their frequent blinking, revealing the striking white upper eyelids. They inhabit rapid streams and are known for their peculiar dipping movements.",
+    "bestTimeToSpot": "Mostly active during the day, year-round, around fast-moving streams.",
+    "conservationStatus": "Least Concern",
+    "diet": "Mainly aquatic insects, larvae, small fish, and fish eggs.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/AmericanDipper.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/AmericanDipper.mp3"
+}
+{
+    "speciesName": "Mexican Spotted Owl",
+    "scientificName": "Strix occidentalis lucida",
+    "family": "Typical Owls",
+    "weight": {"min": 17.6, "max": 24.7},
+    "wingspan": 39.8,
+    "distinctiveFeatures": "The Mexican Spotted Owl flaunts a brownish plumage intermingled with white spots on its abdomen, and white streaks on its underparts. Possessing dark brown eyes surrounded by bold, white eyebrows, this owl is generally nocturnal, adopting a secretive behavior, and usually heard more than it’s seen.",
+    "bestTimeToSpot": "During the night, particularly close to dawn or dusk, in dense, riparian forests.",
+    "conservationStatus": "Near Threatened",
+    "diet": "Depends primarily on small mammals such as mice and voles, occasionally preying on birds, bats, and arthropods.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/MexicanSpottedOwl.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/Mexican+Spotted+Owl.mp3"
+}
+{
+    "speciesName": "Anna's Hummingbird",
+    "scientificName": "Calypte anna",
+    "family": "Hummingbirds",
+    "weight": {"min": 0.1, "max": 0.2},
+    "wingspan": 4.7,
+    "distinctiveFeatures": "Anna’s Hummingbird, distinctive by its compact and radiant frame, showcases an iridescent bronze-green hue on its back and crown. Males feature a vibrant, rose-red forehead and throat. It’s known for its spectacular courtship display involving skyward flights and showy dives.",
+    "bestTimeToSpot": "Usually active during the day, around open woods, gardens, meadows, and shrublands.",
+    "conservationStatus": "Least Concern",
+    "diet": "Feeds predominantly on nectar from flowers, supplemented by small insects and spiders for proteins.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/todd-smith-20ietHBd_Go-unsplash.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC697495+-+Anna's+Hummingbird+-+Calypte+anna.mp3"
+}
+{
+    "speciesName": "Mountain Bluebird",
+    "scientificName": "Sialia currucoides",
+    "family": "Thrushes",
+    "weight": {"min": 1.0, "max": 1.1},
+    "wingspan": 14.2,
+    "distinctiveFeatures": "Mountain Bluebirds are adorned with a sleek, vivid, cerulean blue plumage, contrasted by their lighter underparts. Recognizable by their slender frame and smooth flight pattern, these birds tend to prefer open habitats and are often seen perched on low branches or fences.",
+    "bestTimeToSpot": "Most active during the day, preferably in open, mountainous areas.",
+    "conservationStatus": "Least Concern",
+    "diet": "Primarily insectivorous during summer, switching to a diet of berries and fruits in colder seasons.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/735px-Mountain_Bluebird_6900vv.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC254430+-+Mountain+Bluebird+-+Sialia+currucoides.mp3"
+}
+{
+    "speciesName": "Golden Eagle",
+    "scientificName": "Aquila chrysaetos",
+    "family": "Hawks, Eagles, and Kites",
+    "weight": {"min": 105.8, "max": 216.1},
+    "wingspan": 86.6,
+    "distinctiveFeatures": "Golden Eagles, known for their immense size and strength, exhibit dark brown plumage with golden-brown feathers on their heads and necks. With sharp talons and a substantial beak, these majestic raptors are recognized by their powerful flight, capable of soaring high above mountainous terrains and open fields.",
+    "bestTimeToSpot": "During the day, especially in open or semi-open landscapes.",
+    "conservationStatus": "Least Concern",
+    "diet": "Feeds primarily on medium-sized mammals, but will also prey on birds, reptiles, and carrion.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/750px-Golden_eagle_(13297147633).jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC70431+-+Golden+Eagle+-+Aquila+chrysaetos.mp3"
+}
+{
+    "speciesName": "Canyon Wren",
+    "scientificName": "Catherpes mexicanus",
+    "family": "Wrens",
+    "weight": {"min": 0.3, "max": 0.7},
+    "wingspan": 7.9,
+    "distinctiveFeatures": "Small, distinctively long-legged birds usually found in rocky areas. They have a rust-colored back and long white supercilium. The song is a series of melodious descending notes.",
+    "bestTimeToSpot": "spring time",
+    "conservationStatus": "Least Concern",
+    "diet": "Mainly insects and spiders.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/CanyonWren.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC502157+-+Canyon+Wren+-+Catherpes+mexicanus.mp3"
+}
+
+{
+    "speciesName": "Western Tanager",
+    "scientificName": "Piranga ludoviciana",
+    "family": "Cardinals",
+    "weight": {"min": 0.8, "max": 1.3},
+    "wingspan": 11.5,
+    "distinctiveFeatures": "Males are striking with bright red heads and bright yellow bodies. Females are more muted in color. Both have stout, hooked bills.",
+    "bestTimeToSpot": "Primarily in the summer, in coniferous forests.",
+    "conservationStatus": "Consider consulting IUCN Red List or another reliable source for current status.",
+    "diet": "Mainly insects and fruit.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/Western_Tanager_piranga_ludoviciana%3B_male_on_branch.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC441367+-+Western+Tanager+-+Piranga+ludoviciana.mp3",
+}
+{
+    "speciesName": "Turkey Vulture",
+    "scientificName": "Cathartes aura",
+    "family": "New World Vultures",
+    "weight": {"min": 70.5, "max": 81.6},
+    "wingspan": 70.1,
+    "distinctiveFeatures": "Large dark birds with long, broad wings. Small, unfeathered heads.",
+    "bestTimeToSpot": "Can be seen soaring in skies from spring to early fall.",
+    "conservationStatus": "Consider consulting IUCN Red List or another reliable source for current status.",
+    "diet": "Scavenges on carrion.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/Turkey_Vulture_(7172188840).jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC520288+-+Turkey+Vulture+-+Cathartes+aura.mp3"
+}
+{
+    "speciesName": "Black-chinned Hummingbird",
+    "scientificName": "Archilochus alexandri",
+    "family": "Hummingbirds",
+    "weight": {"min": 0.1, "max": 0.2},
+    "wingspan": 4.3,
+    "distinctiveFeatures": "Black chin and lower throat; an iridescent purple band is visible on the upper throat in proper lighting.",
+    "bestTimeToSpot": "Open woodlands, gardens, and meadows during the warmer months.",
+    "conservationStatus": "Consider consulting IUCN Red List or another reliable source for current status.",
+    "diet": "Mainly nectar, insects, and spiders.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/Black-chinned_Hummingbird_(18247670399).jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC494996+-+Black-chinned+Hummingbird+-+Archilochus+alexandri.mp3"
+}
+{
+    "speciesName": "Steller's Jay",
+    "scientificName": "Cyanocitta stelleri",
+    "family": "Jay",
+    "weight": {
+        "min": 3.5,
+        "max": 4.9
+    },
+    "wingspan": 17,
+    "distinctiveFeatures": "Prominent crest, dark blue bodies with darker heads and pronounced black eyebrows.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Nuts, fruits, seeds, and occasionally small animals.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/Steller's_Jay_(2).jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC502160+-+Steller's+Jay+-+Cyanocitta+stelleri.mp3"
+}
+{
+    "speciesName": "Red-Tailed Hawk",
+    "scientificName": "Buteo jamaicensis",
+    "family": "Hawk",
+    "weight": {
+        "min": 24.3,
+        "max": 51.5
+    },
+    "wingspan": 49.6,
+    "distinctiveFeatures": "Broad, rounded wings and a short, wide tail. Most have a rich, reddish-brown tail.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Small mammals, birds, and reptiles.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/Red-tailed_Hawk.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC545895+-+Red-tailed+Hawk+-+Buteo+jamaicensis.mp3"
+}
+{
+    "speciesName": "White-throated Swift",
+    "scientificName": "Aeronautes saxatalis",
+    "family": "Swift",
+    "weight": {
+        "min": 0.7,
+        "max": 1.1
+    },
+    "wingspan": 14.6,
+    "distinctiveFeatures": "Black with a white throat, white patches on the sides of the tail, and pale underwings.",
+    "bestTimeToSpot": "Spring and Summer",
+    "conservationStatus": "Least Concern",
+    "diet": "Flying insects.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/White_Throated_Swift.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC253899+-+White-throated+Swift+-+Aeronautes+saxatalis.mp3"
+}
+{
+    "speciesName": "Violet-green Swallow",
+    "scientificName": "Tachycineta thalassina",
+    "family": "Swallow",
+    "weight": {
+        "min": 0.4,
+        "max": 0.6
+    },
+    "wingspan": 13.4,
+    "distinctiveFeatures": "Small, sleek birds with a greenish back and white underparts.",
+    "bestTimeToSpot": "Spring and Summer",
+    "conservationStatus": "Least Concern",
+    "diet": "Primarily insects.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/Violet-green-swallow.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC488681+-+Violet-green+Swallow+-+Tachycineta+thalassina.mp3"
+}
+{
+    "speciesName": "Northern Flicker",
+    "scientificName": "Colaptes auratus",
+    "family": "Woodpecker",
+    "weight": {
+        "min": 3.9,
+        "max": 5.6
+    },
+    "wingspan": 18.5,
+    "distinctiveFeatures": "Large, brown woodpeckers with a gentle expression and handsome black-scalloped plumage.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Ants and beetles.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/Northern_Flicker_(4508135578).jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC807485+-+Northern+Flicker+-+Colaptes+auratus+auratus.mp3"
+}
+{
+    "speciesName": "Bewick's Wren",
+    "scientificName": "Thryomanes bewickii",
+    "family": "Wren",
+    "weight": {
+        "min": 0.3,
+        "max": 0.4
+    },
+    "wingspan": 7.9,
+    "distinctiveFeatures": "Small, energetic birds with a distinctive white eyebrow, long tail, and loud voice.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Insects and spiders.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/BewicksWren.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC531127+-+Bewick's+Wren+-+Thryomanes+bewickii.mp3"
+}
+{
+    "speciesName": "Spotted Towhee",
+    "scientificName": "Pipilo maculatus",
+    "family": "Sparrow",
+    "weight": {
+        "min": 1.2,
+        "max": 1.7
+    },
+    "wingspan": 11.8,
+    "distinctiveFeatures": "Large sparrows with thick bills, dark hoods, rich rufous sides, and long, dark tails with conspicuous white corners.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Seeds, fruits, insects, spiders.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/spottedTowhee.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC559006+-+Spotted+Towhee+-+Pipilo+maculatus.mp3"
+}
+{
+    "speciesName": "American Robin",
+    "scientificName": "Turdus migratorius",
+    "family": "Thrush",
+    "weight": {
+        "min": 2.7,
+        "max": 3.0
+    },
+    "wingspan": 16.1,
+    "distinctiveFeatures": "Large, gray-brown birds with warm orange underparts and dark heads.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Fruits, berries, earthworms, and insects.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/americanRobin.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC524661+-+American+Robin+-+Turdus+migratorius.mp3"
+}
+{
+    "speciesName": "Woodhouse's Scrub-Jay",
+    "scientificName": "Aphelocoma woodhouseii",
+    "family": "Jay",
+    "weight": {
+        "min": 2.8,
+        "max": 3.1
+    },
+    "wingspan": 15.3,
+    "distinctiveFeatures": "Medium-sized, long-tailed and long-legged birds with a small bill, blue and gray coloring.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Nuts, fruits, seeds, insects.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/WoodhouseScrubJay.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC809246+-+Woodhouse's+Scrub+Jay+-+Aphelocoma+woodhouseii.mp3"
+}
+{
+    "speciesName": "Ash-throated Flycatcher",
+    "scientificName": "Myiarchus cinerascens",
+    "family": "Flycatcher",
+    "weight": {
+        "min": 0.8,
+        "max": 1.0
+    },
+    "wingspan": 11.4,
+    "distinctiveFeatures": "Small birds with a crest, long tail, and pale grayish throat.",
+    "bestTimeToSpot": "Spring and Summer",
+    "conservationStatus": "Least Concern",
+    "diet": "Insects and small fruits.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/ashthroatedflycatcher.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC560020+-+Ash-throated+Flycatcher+-+Myiarchus+cinerascens.mp3"
+}
+{
+    "speciesName": "Mountain Chickadee",
+    "scientificName": "Poecile gambeli",
+    "family": "Tit",
+    "weight": {
+        "min": 0.3,
+        "max": 0.4
+    },
+    "wingspan": 7.9,
+    "distinctiveFeatures": "Small, active birds with a distinctive white stripe over the eye.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Seeds, insects, and spiders.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/800px-Mountain_Chickadee_(14422073929).jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC558338+-+Mountain+Chickadee+-+Poecile+gambeli.mp3"
+}
+{
+    "speciesName": "Dark-eyed Junco",
+    "scientificName": "Junco hyemalis",
+    "family": "Sparrow",
+    "weight": {
+        "min": 0.6,
+        "max": 1.1
+    },
+    "wingspan": 9.1,
+    "distinctiveFeatures": "Small, gray or brown birds with a pink bill and white outer tail feathers.",
+    "bestTimeToSpot": "Year-round",
+    "conservationStatus": "Least Concern",
+    "diet": "Seeds, insects, and berries.",
+    "imageURL": "https://zionnp.s3.amazonaws.com/bird-media/darkeyedjunco.jpg",
+    "audioURL": "https://zionnp.s3.amazonaws.com/bird-media/XC537140+-+Dark-eyed+Junco+-+Junco+hyemalis.mp3"
+}
+
