@@ -40,21 +40,18 @@ function MapDisplay({ vegCName, setVegCName, secondVegCName, setSecondVegCName, 
     console.log("vegCName in MapDisplay:", vegCName);
    console.log("secondVegCName in MapDisplay:", secondVegCName);
     // New Logic for Extracting and Sanitizing the plant names.
-    if (properties && properties.VEG_CNAME) {
-      // Extract individual words/phrases by splitting at '/'
-      const phrases = properties.VEG_CNAME.split('/');
-      
-      phrases.forEach((phrase, index) => {
-        // Use your utility function here to find the matching plant name
-        const plantName = extractPlantName(phrase);
-
-        if (plantName) {
-          // Setting the sanitized and matched plant name to the state
-          if(index === 0) setVegCName(plantName);
-          else if(index === 1) setSecondVegCName(plantName);
-        }
-      });
+if (properties && properties.VEG_CNAME) {
+  const phrases = properties.VEG_CNAME.split('/');
+  console.log('Phrases:', phrases);
+  phrases.forEach((phrase, index) => {
+    const plantName = extractPlantName(phrase);
+    console.log('Extracted Plant Name:', plantName); // Log here to debug
+    if (plantName) {
+      if(index === 0) setVegCName(plantName);
+      else if(index === 1) setSecondVegCName(plantName);
     }
+  });
+}
     
 };
 
