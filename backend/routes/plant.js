@@ -1,127 +1,128 @@
-require('dotenv').config();
-const express = require ('express')
-const router = express.Router()
-const { FRONTEND, YOUR_TREFLE_TOKEN } = process.env
-
+const express = require('express');
+const router = express.Router();
+const { YOUR_TREFLE_TOKEN, IQ_AIR_API_KEY, NPS_API_KEY} = process.env;
 let fetch;
+import('node-fetch').then(module => { fetch = module.default; });
 
-import('node-fetch').then(nodeFetch => {
-    fetch = nodeFetch.default;
-});
+const TREFLE_BASE_URL = 'https://trefle.io';
+const TREFLE_AUTH_URL = `${TREFLE_BASE_URL}/api/auth/claim`;
 
-// Change the route to something more generic
+function constructUrl(base, endpoint, params = {}) {
+  const url = new URL(`${base}${endpoint}`);
+  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+  return url;
+}
+
 router.get('/get-plant-info/:plantName', async (req, res) => {
   try {
-    console.log('Received request for plant: ', req.params.plantName);
+    const plantName = req.params.plantName;
+    console.log('Received request for plant: ', plantName);
 
-    // Fetch Token from Trefle API
-    const tokenResponse = await fetch('https://trefle.io/api/auth/claim', {
-      method: 'post',
-      body: JSON.stringify({
-        origin: 'http://localhost:3000',
-        token: YOUR_TREFLE_TOKEN
-      }),
-      headers: { 'Content-Type': 'application/json' },
+    const tokenResponse = await fetch(TREFLE_AUTH_URL, {
+      method: 'POST',
+      body: JSON.stringify({ origin: 'http://localhost:3000', token: YOUR_TREFLE_TOKEN }),
+      headers: { 'Content-Type': 'application/json' }
     });
 
-    if (!tokenResponse.ok) {
-      console.error('Error fetching token from Trefle API:', tokenResponse.statusText);
-      return res.status(500).json({ error: 'Error fetching token from Trefle API' });
-    }
-
+    if (!tokenResponse.ok) throw new Error(`Error fetching token: ${tokenResponse.statusText}`);
     const { token } = await tokenResponse.json();
-    const { plantName } = req.params;
-    const type = req.query.type || 'common'; 
 
-    let plantApiUrl;
-    if (type === 'scientific') {
-      plantApiUrl = `https://trefle.io/api/v1/plants?token=${token}&filter[scientific_name]=${plantName}`;
-    } else {
-      plantApiUrl = `https://trefle.io/api/v1/plants/search?q=${plantName}&token=${token}`;
+    const type = req.query.type || 'common';
+    const endpoint = type === 'scientific' ? `/api/v1/plants` : `/api/v1/plants/search`;
+    const params = type === 'scientific' ? { token, 'filter[scientific_name]': plantName } : { token, q: plantName };
+
+    const plantUrl = constructUrl(TREFLE_BASE_URL, endpoint, params);
+    const plantResponse = await fetch(plantUrl);
+    if (!plantResponse.ok) throw new Error(`Error fetching plant data: ${plantResponse.statusText}`);
+
+    const plantData = await plantResponse.json();
+    if (!plantData.data || plantData.data.length === 0) return res.status(404).json({ error: 'No plant data found' });
+
+    const plantInfo = plantData.data[0];
+    const selfDetailUrl = constructUrl(TREFLE_BASE_URL, plantInfo.links.self, { token });
+    const selfDetailResponse = await fetch(selfDetailUrl);
+
+    if (selfDetailResponse.ok) {
+      const selfDetailData = await selfDetailResponse.json();
+      // Extract other required data from selfDetailData if needed
+      // ...
     }
 
-    // Fetch Plant Data with the acquired token
-   // Fetch Plant Data with the acquired token
-const plantResponse = await fetch(plantApiUrl);
+    const plantDetailUrl = constructUrl(TREFLE_BASE_URL, plantInfo.links.plant, { token });
+    const plantDetailResponse = await fetch(plantDetailUrl);
+    if (!plantDetailResponse.ok) throw new Error(`Error fetching detailed plant data: ${plantDetailResponse.statusText}`);
 
-if (!plantResponse.ok) {
-    console.error('Error fetching plant data from Trefle API:', plantResponse.statusText);
-    return res.status(500).json({ error: 'Error fetching plant data from Trefle API' });
-}
-    
-const plantData = await plantResponse.json();
-
-if (plantData && plantData.data && plantData.data[0]) {
-  const plantInfo = plantData.data[0]; // accessing the first plant in the data array.
-  const baseURL = 'https://trefle.io'; 
-  const selfDetailUrl = `${baseURL}${plantInfo.links.self}?token=${token}`;
-  const selfDetailResponse = await fetch(selfDetailUrl);
-  if (!selfDetailResponse.ok) {
-    console.error('Error fetching detailed plant data from Trefle API (self link):', selfDetailResponse.statusText);
-    // return or continue based on whether you want to proceed to the next link if this one fails
-  } else {
-    const selfDetailData = await selfDetailResponse.json();
-    console.log('Detailed Self Data: ', selfDetailData); // Log the entire selfDetailData to inspect its structure
-
-    // If the desired properties are directly under selfDetailData.data, you can access them like this:
-    const data = selfDetailData.data || {}; // Access the data property, fallback to an empty object if undefined
-    
-    const growth = data.growth || {};
-    const specifications = data.specifications || {};
-  
-    console.log('Minimum Precipitation: ', growth.minimum_precipitation);
-    console.log('Maximum Precipitation: ', growth.maximum_precipitation);
-    console.log('Minimum Root Depth: ', growth.minimum_root_depth);
-    console.log('Minimum Temperature: ', growth.minimum_temperature);
-    console.log('Maximum Temperature: ', growth.maximum_temperature);
-  
-    console.log('Average Height: ', specifications.average_height);
-    console.log('Maximum Height: ', specifications.maximum_height);
-  }
-
-  // Fetching and logging data from 'plant' link
-  const plantDetailUrl = `${baseURL}${plantInfo.links.plant}?token=${token}`;
-  const plantDetailResponse = await fetch(plantDetailUrl);
-  if (!plantDetailResponse.ok) {
-    console.error('Error fetching detailed plant data from Trefle API (plant link):', plantDetailResponse.statusText);
-    return res.status(500).json({ error: 'Error fetching detailed plant data from Trefle API' });
-  } else {
     const plantDetailData = await plantDetailResponse.json();
-    console.log('Detailed Plant Data: ', plantDetailData);
-    console.log('Growth Data: ', plantDetailData.data.main_species.growth);
+    if (!plantDetailData.data || !plantDetailData.data.main_species) throw new Error('Main species data is not available');
 
-    
-    if (plantDetailData && plantDetailData.data && plantDetailData.data.main_species) {
-      const mainSpecies = plantDetailData.data.main_species;
-    
-      const distribution = mainSpecies.distribution || {}; // Fallback to empty object if undefined
-      const specifications = mainSpecies.specifications || {};
-      const growth = mainSpecies.growth || {};
-      const observations = mainSpecies.observations
-      // Now, send the response back with these details
-      res.json({
-          plantData: plantInfo, // Or you can also send plantDetailData.data if you want to send all detailed data
-          distribution: distribution,
-          specifications: specifications,
-          growth: growth,
-         obeservations: observations
-      });
-    } else {
-      console.error('Main species data is not available in the detailed plant data');
-      res.status(500).json({ error: 'Main species data is not available in the detailed plant data' });
-    }
-  }
-}
-
-  
-  
-  console.log('Plant Name: ', plantName);
+    const mainSpecies = plantDetailData.data.main_species;
+    res.json({
+      plantData: plantInfo,
+      distribution: mainSpecies.distribution || {},
+      specifications: mainSpecies.specifications || {},
+      growth: mainSpecies.growth || {},
+      observations: mainSpecies.observations || {}
+    });
 
   } catch (error) {
-    console.error('Error in /get-plant-info/:plantName route:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error('Error:', error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 
 
-module.exports = router
+router.get('/nearestStation', async (req, res) => {
+  const lat = 37.2982; // Latitude for Zion National Park, Utah
+  const lon = -113.0263; // Longitude for Zion National Park, Utah
+  const apiKey = IQ_AIR_API_KEY; // Your API key from IQAir
+  
+  try {
+    
+    const response = await fetch(`https://api.airvisual.com/v2/city?city=Cedar%20City&state=Utah&country=USA&key=${apiKey}`);
+    if (!response.ok) {
+        const errorDetail = await response.json(); // Parse the response body as JSON
+        console.error('IQAir API Error Detail:', errorDetail); // Log the parsed response body
+        return res.status(500).json({ error: 'Internal Server Error', detail: errorDetail });
+    }
+    const data = await response.json();
+    res.json(data);
+} catch (error) {
+    console.error('Error fetching data from IQAir API:', error);
+    res.status(500).send('Internal Server Error');
+}
+
+});
+
+
+router.get('/allParkInfo', async (req, res) => {
+  try {
+    const parkCode = 'zion'; // Zion National Park Code
+    const baseUrl = 'https://developer.nps.gov/api/v1';
+    const eventsUrl = `${baseUrl}/events?parkCode=${parkCode}`;
+    console.log(req.headers['user-agent'])
+    const response = await fetch(eventsUrl, {
+      method: 'GET',
+      headers: {
+        'X-Api-Key': `kDdwAdOxhtOcdpbjWY74KMQJNdZ8wJhgbtahwgQc`, // Pass API key in 
+        'User-Agent': req.headers['user-agent'],
+      }
+    });
+    if (!response.ok) {
+      console.error('NPS API Error: ', response.statusText);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    
+    const data = await response.json();
+    res.json(data);
+
+  } catch (error) {
+    console.error('Error fetching data from NPS API:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
+
+
+module.exports = router;

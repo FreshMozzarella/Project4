@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import './MapDisplay.css'
 import MapLegend from './MapLegend';
 import { assignColorToVegetation } from '../utilities/colorUtility';
@@ -17,6 +17,14 @@ function MapDisplay({ vegCName, setVegCName, secondVegCName, setSecondVegCName, 
       color: 'white',
       fillOpacity: 0.7
     };
+  };
+
+  const ResizeMap = () => {
+    const map = useMap();
+    useEffect(() => {
+      map._onResize(); // Or, you could also try map.invalidateSize() if _onResize does not work.
+    }, [map]); // Re-run effect when map changes
+    return null;
   };
 
   const onEachFeature = (feature, layer) => {
@@ -44,6 +52,7 @@ if (properties && properties.VEG_CNAME) {
   const phrases = properties.VEG_CNAME.split('/');
   console.log('Phrases:', phrases);
   phrases.forEach((phrase, index) => {
+    console.log('Current Phrase:', phrase); 
     const plantName = extractPlantName(phrase);
     console.log('Extracted Plant Name:', plantName); // Log here to debug
     if (plantName) {
@@ -56,7 +65,7 @@ if (properties && properties.VEG_CNAME) {
 };
 
   useEffect(() => {
-    fetch("https://zionnp.s3.amazonaws.com/Map-data/zionveg.geojson")
+    fetch("https://zionnp.s3.amazonaws.com/Map-data/testzionveg(1).json")
         .then(response => response.json())
         .then(data => {
             const { colorMapping, legendStructure } = assignColorToVegetation(data);
@@ -79,6 +88,7 @@ if (properties && properties.VEG_CNAME) {
     [37.1120777114917004, -113.2526723447929982], // southwest corner
     [37.5263590017140984, -112.8271737053120063]  // northeast corner
   ]}>
+      <ResizeMap /> 
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {geoData && <GeoJSON data={geoData} style={layerStyle} onEachFeature={onEachFeature} />}
     </MapContainer>

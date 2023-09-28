@@ -3,6 +3,7 @@ import MapDisplay from './MapDisplay';
 import PlantDisplay from './PlantDisplay'
 import MapLegend from './MapLegend';
 import NavContainer from './NavContainer';
+import AirQuality from './AirQuality';
 import './Main.css'
 export default function Main() {
     const [colorMapping, setColorMapping] = useState({});
@@ -15,6 +16,12 @@ export default function Main() {
     console.log('Received secondVegCName in Main: ', secondVegCName);
     return (
         <div className="container">
+            <div className='TopLeft'>
+                <AirQuality />
+            </div>
+            <div className='TopRight'>
+                
+            </div>
             <div className="PlantDisplay">
                 <PlantDisplay vegCName={vegCName} secondVegCName={secondVegCName}/>
             </div>

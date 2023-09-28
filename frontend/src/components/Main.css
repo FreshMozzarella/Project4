@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 3fr 1fr; /* Left for PlantDisplay, Middle for MapDisplay, Right for MapLegend */
   grid-template-rows: auto 1fr; /* Top for the components, Bottom for NavContainer */
   grid-template-areas:
+    "TopLeft TopRight TopRight"
     "PlantDisplay MapDisplay Map-Legend"
     "NavContainer NavContainer NavContainer";
   height: 100vh; /* Adjust as needed */
@@ -20,4 +21,5 @@
 }
   
 
-  
+.TopLeft { grid-area: TopLeft; }
+.TopRight { grid-area: TopRight; } 
