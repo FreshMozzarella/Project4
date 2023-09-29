@@ -44,10 +44,9 @@ app.use(morgan('dev'))
 app.use('/bird', birdRouter)
 app.use('/animal', animalRouter)
 app.use('/plant', plantRouter)
-// app.get('/', (req,res)=>{
-//     res.send('hello world')
-// })
-
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+  });
 ///////////////////////////////
 // SERVER 
 ////////////////////////////////
