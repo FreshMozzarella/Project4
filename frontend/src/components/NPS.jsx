@@ -1,80 +1,167 @@
-
+import './NPS.css'
 import React, { useState, useEffect } from 'react';
-export default function NPS(){
-    const [data, setData] = useState({
-        events: [],
-        alerts: [],
-        thingstodo: []
-      });
-      const [error, setError] = useState(null);
+import { Card, CardContent, Typography, Modal, List, ListItem, Button, CardMedia, Tab, Tabs, Box } from '@mui/material';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
+export default function NPS() {
   const BASE_URL = `${process.env.REACT_APP_BASE_URL}/plant`
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch(`${BASE_URL}/allParkInfo`);
-            if (!response.ok) throw new Error('Network response was not ok' + response.statusText);
-            const result = await response.json();
-            setData(result);
-          } catch (error) {
-            console.error('There has been a problem with your fetch operation:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-    return (
-<div>
-  <h1>National Park Information</h1>
-  
-  {error && <p>{error}</p>}
-  
-  <h2>Events</h2>
-  <ul>
-    {data.events.map(event => (
-      <li key={event.title}>
-        <h3>{event.title}</h3>
-        <p>{event.description}</p>
-        <p>From: {event.datestart} to {event.dateend}</p>
-        <p>Hours: {event.times.join(', ')}</p>
-        <p>Is it free? : {event.isfree}</p>
-        <p>Fee info: {event.feeinfo}</p>
-        <p>Images:</p>
-        {event.images.map((image, index) => (
-          <img key={index} src={image.url} alt={event.title} width="100" height="100" />
-        ))}
-        <p>Exact location: {event.longitude} - {event.latitude}</p>
-      </li>
-    ))}
-  </ul>
+  const [error, setError] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [data, setData] = useState({ events: [], alerts: [], thingstodo: [] });
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [tabValue, setTabValue] = useState('alerts');
 
-  <h2>Alerts</h2>
-  <ul>
-    {data.alerts.map(alert => (
-      <li key={alert.title}>
-        <a href={alert.url} target="_blank" rel="noopener noreferrer">{alert.title}</a>
-        <p>{alert.description}</p>
-      </li>
-    ))}
-  </ul>
+  const handleOpenModal = (item) => {
+    setSelectedItem(item);
+    setOpenModal(true);
+  };
 
-  <h2>Things To Do</h2>
-  <ul>
-    {data.thingstodo.map(thing => (
-      <li key={thing.title}>
-        <a href={thing.url} target="_blank" rel="noopener noreferrer">{thing.title}</a>
-        <p>{thing.description}</p>
-        {thing.images.map((image, index) => (
-          <img key={index} src={image.url} alt={thing.title} width="100" height="100" />
-        ))}
-        <p>Average duration of activity: {thing.duration}</p>
-        <p>Activities: {thing.activities.join(', ')}</p>
-        <p>Fee: {thing.feeDescription}</p>
-        <p>Seasons available: {thing.season.join(', ')}</p>
-        <p>Are pets allowed? : {thing.arePetsPermitted}</p>
-        <p>Exact location: {thing.longitude} - {thing.latitude}</p>
-      </li>
-    ))}
-  </ul>
-</div>
+  const handleCloseModal = () => {
+    setSelectedItem(null);
+    setOpenModal(false);
+  };
+
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${BASE_URL}/allParkInfo`);
+        if (!response.ok) throw new Error('Network response was not ok' + response.statusText);
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  return (
+    <Box>
+      <Typography variant="h3" component="h1">National Park Information</Typography>
+      <Tabs value={tabValue} onChange={handleTabChange}>
+        <Tab label="Alerts" value="alerts" />
+        <Tab label="Events" value="events" />
+        <Tab label="Things To Do" value="thingstodo" />
+      </Tabs>
+
+
+      {tabValue === 'alerts' && (
+        <List style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+          {data.alerts.map((alert) => (
+            <ListItem key={alert.title} sx={{ padding: '0px', margin: '0px',flex: '1 0 auto'  }}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>{alert.title}</Typography>
+                  <Button onClick={() => handleOpenModal(alert)}>More Info</Button>
+                </CardContent>
+              </Card>
+            </ListItem>
+          ))}
+        </List>
+      )}
+
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Card>
+          <CardContent>
+            <Typography variant="body1" dangerouslySetInnerHTML={{ __html: selectedItem?.description }} />
+          </CardContent>
+        </Card>
+      </Modal>
+
+
+      {tabValue === 'events' && (
+        <List style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+          {data.events.map((event) => (
+            <ListItem key={event.title} sx={{ padding: '0px', margin: '0px',flex: '1 0 auto'  }}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>{event.title}</Typography>
+                  <Button onClick={() => handleOpenModal(event)}>More Info</Button>
+                </CardContent>
+              </Card>
+            </ListItem>
+          ))}
+        </List>
+      )}
+
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Card>
+          {selectedItem?.images?.[0] && (
+            <CardMedia
+              component="img"
+              image={selectedItem?.images[0].url}
+              alt={selectedItem?.title}
+            />
+          )}
+          <CardContent>
+            <Typography variant="body1" dangerouslySetInnerHTML={{ __html: selectedItem?.description }} />
+            {selectedItem?.datestart && <Typography variant="body2">From: {selectedItem?.datestart} to {selectedItem?.dateend}</Typography>}
+            {selectedItem?.times && <Typography variant="body2">Hours: {Object.values(selectedItem?.times).join(', ')}</Typography>}
+            {selectedItem?.isfree && <Typography variant="body2">Is it free?: {selectedItem?.isfree}</Typography>}
+            {selectedItem?.feeinfo && <Typography variant="body2">Fee info: {selectedItem?.feeinfo}</Typography>}
+            {selectedItem?.longitude && <Typography variant="body2">Exact location: {selectedItem?.longitude} - {selectedItem?.latitude}</Typography>}
+          </CardContent>
+        </Card>
+      </Modal>
+
+
+
+      {tabValue === 'thingstodo' && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+          {data.thingstodo.map((thing) => (
+            <div key={thing.title} sx={{ padding: '0px', margin: '0px',flex: '1 0 auto'  }}>
+              <Card >
+                <CardContent>
+                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>{thing.title}</Typography>
+                  <Button onClick={() => handleOpenModal(thing)}>More Info</Button>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Card>
+          {selectedItem?.images?.[0] && (
+            <CardMedia
+              component="img"
+              image={selectedItem?.images[0].url}
+              alt={selectedItem?.title}
+            />
+          )}
+          <CardContent>
+            <Typography variant="body1" dangerouslySetInnerHTML={{ __html: selectedItem?.description }} />
+            {selectedItem?.duration && <Typography variant="body2">Average duration of activity: {selectedItem?.duration}</Typography>}
+            {selectedItem?.activities && <Typography variant="body2">Activities: {selectedItem?.activities.join(', ')}</Typography>}
+            {selectedItem?.feeDescription && <Typography variant="body2">Fee: {selectedItem?.feeDescription}</Typography>}
+            {selectedItem?.season && <Typography variant="body2">Seasons available: {selectedItem?.season.join(', ')}</Typography>}
+            {selectedItem?.arePetsPermitted && <Typography variant="body2">Are pets allowed?: {selectedItem?.arePetsPermitted}</Typography>}
+            {selectedItem?.longitude && <Typography variant="body2">Exact location: {selectedItem?.longitude} - {selectedItem?.latitude}</Typography>}
+          </CardContent>
+        </Card>
+      </Modal>
+
+    </Box>
   );
 }
+
+

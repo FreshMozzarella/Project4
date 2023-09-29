@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, useMap, ScaleControl } from 'react-leaflet';
 import './MapDisplay.css'
 import MapLegend from './MapLegend';
 import { assignColorToVegetation } from '../utilities/colorUtility';
 import extractPlantName from '../utilities/plantNameUtility'
-
+import { Container } from '@mui/material';
 function MapDisplay({ vegCName, setVegCName, secondVegCName, setSecondVegCName, setColorMapping, colorMapping, setLegendStructure }) {
   const [geoData, setGeoData] = useState(null);
 
@@ -77,7 +77,13 @@ if (properties && properties.VEG_CNAME) {
         });
   }, []);
   
-  return (
+  return (<Container
+    sx={{ 
+      width: '50vw', // 50% of Viewport Width. Adjust as needed
+      height: '80vh', // 80% of Viewport Height. Adjust as needed
+      position: 'relative', // To help position inner elements like MapLegend
+      overflow: 'hidden', // To clip off any overflowing content
+    }}>
     <MapContainer 
     className='map-container' 
     center={[37.3, -113.1]} 
@@ -87,12 +93,15 @@ if (properties && properties.VEG_CNAME) {
     maxBounds={[
     [37.1120777114917004, -113.2526723447929982], // southwest corner
     [37.5263590017140984, -112.8271737053120063]  // northeast corner
-  ]}>
+  ]}
+  style={{ height: '100%', width: '100%' }}
+  >
       <ResizeMap /> 
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <ScaleControl position="bottomleft" />
       {geoData && <GeoJSON data={geoData} style={layerStyle} onEachFeature={onEachFeature} />}
     </MapContainer>
-    
+    </Container>
   );
 }
 
