@@ -10,7 +10,7 @@ function PlantDisplayItem({ plantName }) {
     setPlantData(null);
     if (!plantName) return;
     
-    const apiUrl = `http://localhost:4000/plant/get-plant-info/${encodeURIComponent(plantName)}`;
+    const apiUrl = `${process.env.REACT_APP_BASE_URL}/plant/get-plant-info/${encodeURIComponent(plantName)}`;
     setIsLoading(true);
     
     fetch(apiUrl)

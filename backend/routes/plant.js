@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sanitizeHtml = require('sanitize-html');
-const { YOUR_TREFLE_TOKEN, IQ_AIR_API_KEY, NPS_API_KEY} = process.env;
+const { YOUR_TREFLE_TOKEN, IQ_AIR_API_KEY, NPS_API_KEY, FRONTEND} = process.env;
 let fetch;
 import('node-fetch').then(module => { fetch = module.default; });
 
@@ -21,7 +21,7 @@ router.get('/get-plant-info/:plantName', async (req, res) => {
 
     const tokenResponse = await fetch(TREFLE_AUTH_URL, {
       method: 'POST',
-      body: JSON.stringify({ origin: 'http://localhost:3000', token: YOUR_TREFLE_TOKEN }),
+      body: JSON.stringify({ origin: FRONTEND, token: YOUR_TREFLE_TOKEN }),
       headers: { 'Content-Type': 'application/json' }
     });
 
