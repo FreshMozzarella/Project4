@@ -4,6 +4,7 @@ import PlantDisplay from './PlantDisplay'
 import MapLegend from './MapLegend';
 import NavContainer from './NavContainer';
 import AirQuality from './AirQuality';
+import NPS from './NPS';
 import './Main.css'
 export default function Main() {
     const [colorMapping, setColorMapping] = useState({});
@@ -20,7 +21,7 @@ export default function Main() {
                 <AirQuality />
             </div>
             <div className='TopRight'>
-                
+                <NPS />
             </div>
             <div className="PlantDisplay">
                 <PlantDisplay vegCName={vegCName} secondVegCName={secondVegCName}/>

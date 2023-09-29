@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const sanitizeHtml = require('sanitize-html');
 const { YOUR_TREFLE_TOKEN, IQ_AIR_API_KEY, NPS_API_KEY} = process.env;
 let fetch;
 import('node-fetch').then(module => { fetch = module.default; });
@@ -99,21 +100,99 @@ router.get('/allParkInfo', async (req, res) => {
     const parkCode = 'zion'; // Zion National Park Code
     const baseUrl = 'https://developer.nps.gov/api/v1';
     const eventsUrl = `${baseUrl}/events?parkCode=${parkCode}`;
-    console.log(req.headers['user-agent'])
+    
     const response = await fetch(eventsUrl, {
       method: 'GET',
       headers: {
-        'X-Api-Key': `kDdwAdOxhtOcdpbjWY74KMQJNdZ8wJhgbtahwgQc`, // Pass API key in 
+        'X-Api-Key': `${NPS_API_KEY}`, // Pass API key in 
         'User-Agent': req.headers['user-agent'],
       }
     });
+    
     if (!response.ok) {
       console.error('NPS API Error: ', response.statusText);
       return res.status(500).json({ error: 'Internal Server Error' });
     }
     
     const data = await response.json();
-    res.json(data);
+    
+    if (!data.data) return res.status(500).json({ error: 'No events data available' });
+
+        // Fetch Alerts Data
+        const alertsUrl = `${baseUrl}/alerts?parkCode=${parkCode}`;
+        const alertsResponse = await fetch(alertsUrl, {
+          method: 'GET',
+          headers: {
+            'X-Api-Key': `${NPS_API_KEY}`,
+            'User-Agent': req.headers['user-agent'],
+          }
+        });
+    
+        if (!alertsResponse.ok) {
+          console.error('NPS API Error on Alerts: ', alertsResponse.statusText);
+          return res.status(500).json({ error: 'Internal Server Error on Alerts' });
+        }
+        const alertsData = await alertsResponse.json();
+
+        // Fetch Alerts Data
+        const thingsToDoUrl = `${baseUrl}/thingstodo?parkCode=${parkCode}`;
+        const thingsToDoResponse = await fetch(thingsToDoUrl, {
+          method: 'GET',
+          headers: {
+            'X-Api-Key': `${NPS_API_KEY}`,
+            'User-Agent': req.headers['user-agent'],
+          }
+        });
+    
+        if (!thingsToDoResponse.ok) {
+          console.error('NPS API Error on Alerts: ', thingsToDoResponse.statusText);
+          return res.status(500).json({ error: 'Internal Server Error on Alerts' });
+        }
+        const thingsToDoData = await thingsToDoResponse.json();
+
+       // Sanitize the HTML content in the descriptions
+
+    // Process and sanitize data before sending to frontend
+    const processedEvents = data.data.map(event => ({
+      title: event.title,
+      location: event.location,
+      datestart: event.datestart,
+      dateend: event.dateend,
+      times: event.times,
+      isfree: event.isfree,
+      feeinfo: event.feeinfo,
+      description: sanitizeHtml(event.description), // sanitize HTML content
+      images: event.images,
+      longitude: event.longitude,
+      latitude: event.latitude,
+    }));
+
+    const processedAlerts = alertsData.data.map(alert => ({
+      url: alert.url,
+      title: alert.title,
+      description: sanitizeHtml(alert.description), // sanitize HTML content if needed
+    }));
+
+    const processedThingsToDo = thingsToDoData.data.map(thingToDo => ({
+      location: thingToDo.location,
+      url: thingToDo.url,
+      title: thingToDo.title,
+      description: sanitizeHtml(thingToDo.longDescription), // sanitize HTML content
+      duration: thingToDo.duration,
+      activities: thingToDo.activities.map(activity => activity.name), // extracting the names of activities
+      images: thingToDo.images.map(image => image.url), // extracting image urls
+      feeDescription: thingToDo.feeDescription,
+      season: thingToDo.season,
+      arePetsPermitted: thingToDo.arePetsPermitted,
+      latitude: thingToDo.latitude,
+      longitude: thingToDo.longitude,
+    }));
+
+    res.json({
+      events: processedEvents,
+      alerts: processedAlerts,
+      thingstodo: processedThingsToDo,
+    });
 
   } catch (error) {
     console.error('Error fetching data from NPS API:', error);

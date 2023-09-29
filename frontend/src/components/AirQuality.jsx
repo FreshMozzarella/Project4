@@ -10,6 +10,7 @@ import {
 export default function AirQuality() {
   const [data, setData] = useState(null);
   const BASE_URL = `${process.env.REACT_APP_BASE_URL}/plant`
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
