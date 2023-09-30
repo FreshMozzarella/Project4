@@ -1,7 +1,8 @@
 import './NPS.css'
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography, Modal, List, ListItem, Button, CardMedia, Tab, Tabs, Box } from '@mui/material';
+import { Card, CardContent, Typography, Modal, List, ListItem, Button, CardMedia, Tab, Tabs, Box, IconButton } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
+import InfoSharpIcon from '@mui/icons-material/InfoSharp';
 export default function NPS() {
   const BASE_URL = `${process.env.REACT_APP_BASE_URL}/plant`
   const [error, setError] = useState(null);
@@ -49,18 +50,22 @@ export default function NPS() {
 
 
       {tabValue === 'alerts' && (
-        <List style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
           {data.alerts.map((alert) => (
-            <ListItem key={alert.title} sx={{ padding: '0px', margin: '0px',flex: '1 0 auto'  }}>
-              <Card>
+            <div key={alert.title} sx={{ padding: '0px', margin: '0px', flex: '1 0 auto' }}>
+              <Card sx={{ borderRadius: '8px', height: '70px' }}>
                 <CardContent>
-                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>{alert.title}</Typography>
-                  <Button onClick={() => handleOpenModal(alert)}>More Info</Button>
+                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>
+                    {alert.title}
+                  </Typography>
+                  <IconButton onClick={() => handleOpenModal(alert)}>
+                    <InfoSharpIcon />
+                  </IconButton>
                 </CardContent>
               </Card>
-            </ListItem>
+            </div>
           ))}
-        </List>
+        </div>
       )}
 
       <Modal
@@ -78,18 +83,22 @@ export default function NPS() {
 
 
       {tabValue === 'events' && (
-        <List style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
           {data.events.map((event) => (
-            <ListItem key={event.title} sx={{ padding: '0px', margin: '0px',flex: '1 0 auto'  }}>
-              <Card>
+            <div key={event.title} sx={{ padding: '0px', margin: '0px', flex: '1 0 auto' }}>
+              <Card sx={{ borderRadius: '8px', height: '70px' }}>
                 <CardContent>
-                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>{event.title}</Typography>
-                  <Button onClick={() => handleOpenModal(event)}>More Info</Button>
+                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>
+                    {event.title}
+                  </Typography>
+                  <IconButton onClick={() => handleOpenModal(alert)}>
+                    <InfoSharpIcon />
+                  </IconButton>
                 </CardContent>
               </Card>
-            </ListItem>
+            </div>
           ))}
-        </List>
+        </div>
       )}
 
       <Modal
@@ -99,13 +108,7 @@ export default function NPS() {
         aria-describedby="modal-modal-description"
       >
         <Card>
-          {selectedItem?.images?.[0] && (
-            <CardMedia
-              component="img"
-              image={selectedItem?.images[0].url}
-              alt={selectedItem?.title}
-            />
-          )}
+          {/* add images */}
           <CardContent>
             <Typography variant="body1" dangerouslySetInnerHTML={{ __html: selectedItem?.description }} />
             {selectedItem?.datestart && <Typography variant="body2">From: {selectedItem?.datestart} to {selectedItem?.dateend}</Typography>}
@@ -122,11 +125,15 @@ export default function NPS() {
       {tabValue === 'thingstodo' && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
           {data.thingstodo.map((thing) => (
-            <div key={thing.title} sx={{ padding: '0px', margin: '0px',flex: '1 0 auto'  }}>
-              <Card >
+            <div key={thing.title} sx={{ padding: '0px', margin: '0px', flex: '1 0 auto' }}>
+              <Card sx={{ borderRadius: '8px', height: '70px' }}>
                 <CardContent>
-                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>{thing.title}</Typography>
-                  <Button onClick={() => handleOpenModal(thing)}>More Info</Button>
+                  <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>
+                    {thing.title}
+                  </Typography>
+                  <IconButton onClick={() => handleOpenModal(alert)}>
+                    <InfoSharpIcon />
+                  </IconButton>
                 </CardContent>
               </Card>
             </div>
@@ -141,13 +148,7 @@ export default function NPS() {
         aria-describedby="modal-modal-description"
       >
         <Card>
-          {selectedItem?.images?.[0] && (
-            <CardMedia
-              component="img"
-              image={selectedItem?.images[0].url}
-              alt={selectedItem?.title}
-            />
-          )}
+          {/* add images when we figure out how to find the right path */}
           <CardContent>
             <Typography variant="body1" dangerouslySetInnerHTML={{ __html: selectedItem?.description }} />
             {selectedItem?.duration && <Typography variant="body2">Average duration of activity: {selectedItem?.duration}</Typography>}

@@ -10,14 +10,14 @@ import NPS from './NPS';
 import './Main.css'
 
 export default function Main() {
-  const [colorMapping, setColorMapping] = useState({});
-  const [legendStructure, setLegendStructure] = useState({});
-  const [vegCName, setVegCName] = useState('');
-  const [secondVegCName, setSecondVegCName] = useState('');
+    const [colorMapping, setColorMapping] = useState({});
+    const [legendStructure, setLegendStructure] = useState({});
+    const [vegCName, setVegCName] = useState('');
+    const [secondVegCName, setSecondVegCName] = useState('');
 
     return (
         <Container maxWidth={false} sx={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-            <Grid container spacing={2} sx={{ flex: '1', overflow: 'auto', minHeight: '0' }}>
+            <Grid container spacing={0} sx={{ flex: '1', overflow: 'auto', minHeight: '0' }}>
                 {/* Left Column */}
                 <Grid item xs={3} sx={{ display: 'flex', flexDirection: 'column', overflow: 'auto', minHeight: '0', height: '100%' }}>
                     <Box sx={{ mb: 2, overflow: 'auto' }}>
@@ -27,10 +27,9 @@ export default function Main() {
                         <PlantDisplay vegCName={vegCName} secondVegCName={secondVegCName} />
                     </Box>
                 </Grid>
-
-                {/* Center Column */}
-                <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', overflow: 'auto', minHeight: '0' }}>
-                    <Box sx={{ flex: '1', overflow: 'auto' }}>
+                
+                <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: '0' }}>
+                    <Box sx={{ flexShrink: 0, overflow: 'auto' }}>
                         <MapDisplay
                             setColorMapping={setColorMapping}
                             setLegendStructure={setLegendStructure}
@@ -39,10 +38,11 @@ export default function Main() {
                             setSecondVegCName={setSecondVegCName}
                         />
                     </Box>
-                    <Box sx={{ overflowY: 'auto', maxHeight: '25%' }}>
+                    <Box sx={{ flexShrink: 0, overflow: 'auto' }}>
                         <NavContainer />
                     </Box>
                 </Grid>
+
 
                 {/* Right Column */}
                 <Grid item xs={3} sx={{ display: 'flex', flexDirection: 'column', overflow: 'auto', minHeight: '0' }}>

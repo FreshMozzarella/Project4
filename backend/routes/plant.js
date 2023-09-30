@@ -33,10 +33,12 @@ router.get('/get-plant-info/:plantName', async (req, res) => {
     const params = type === 'scientific' ? { token, 'filter[scientific_name]': plantName } : { token, q: plantName };
 
     const plantUrl = constructUrl(TREFLE_BASE_URL, endpoint, params);
+    console.log('Requested URL:', plantUrl.href); // Log the requested URL
     const plantResponse = await fetch(plantUrl);
     if (!plantResponse.ok) throw new Error(`Error fetching plant data: ${plantResponse.statusText}`);
 
     const plantData = await plantResponse.json();
+    console.log('Received Plant Data:', plantData);
     if (!plantData.data || plantData.data.length === 0) return res.status(404).json({ error: 'No plant data found' });
 
     const plantInfo = plantData.data[0];

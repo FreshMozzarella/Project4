@@ -6,7 +6,9 @@ function PlantDisplayItem({ plantName }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const TREFLE_BASE_URL = 'https://trefle.io';
+  const isSpecialCase = ['not a plant', 'not enough plant data'].includes(plantName.toLowerCase());
   useEffect(() => {
+    if (isSpecialCase || !plantName) return;
     setPlantData(null);
     if (!plantName) return;
     
@@ -29,11 +31,12 @@ function PlantDisplayItem({ plantName }) {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [plantName]);
+  }, [plantName, isSpecialCase]);
   
-  if (isLoading) return <Card><CardContent>Loading...</CardContent></Card>;
-  if (error) return <Card><CardContent>Error: {error}</CardContent></Card>;
-  if (!plantData) return <Card><CardContent>No data available for {plantName}</CardContent></Card>;
+  if (isSpecialCase) return <Card><CardContent><Typography variant="body2">{plantName}</Typography></CardContent></Card>;
+  if (isLoading) return <Card><CardContent><Typography variant="body2">Loading...</Typography></CardContent></Card>;
+  if (error) return <Card><CardContent><Typography variant="body2">Error: {error}</Typography></CardContent></Card>;
+  if (!plantData) return <Card><CardContent><Typography variant="body2">No data available for {plantName}</Typography></CardContent></Card>;
 
   return (
     <Card sx={{height: '100%'}}>
