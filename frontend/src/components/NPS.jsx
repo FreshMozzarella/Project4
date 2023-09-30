@@ -89,9 +89,9 @@ export default function NPS() {
               <Card sx={{ borderRadius: '8px', height: '70px' }}>
                 <CardContent>
                   <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>
-                    {event.title}
+                    {alert.title}
                   </Typography>
-                  <IconButton onClick={() => handleOpenModal(alert)}>
+                  <IconButton onClick={() => handleOpenModal(event)}>
                     <InfoSharpIcon />
                   </IconButton>
                 </CardContent>
@@ -131,7 +131,7 @@ export default function NPS() {
                   <Typography variant="h6" component="h3" style={{ fontSize: '14px', color: 'grey' }}>
                     {thing.title}
                   </Typography>
-                  <IconButton onClick={() => handleOpenModal(alert)}>
+                  <IconButton onClick={() => handleOpenModal(thing)}>
                     <InfoSharpIcon />
                   </IconButton>
                 </CardContent>
