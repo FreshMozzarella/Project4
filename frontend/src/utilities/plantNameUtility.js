@@ -42,11 +42,7 @@ export default function extractPlantName(vegCName) {
       
       return 'unclassified'; // default message for any other cases
     }
-    console.log('extracted plant names: ',extractedNames)
     return extractedNames.join(', '); // Return the joined string of extracted names
 }
 
-// Example of usage:
-console.log(extractPlantName('Pinyon - Juniper Woodland Complex')); // Output: Pinyon, Juniper
-console.log(extractPlantName('Transportation, Communications, and Utilities')); // Output: not a plant
-console.log(extractPlantName('Mixed Mountain Shrubland Complex')); // Output: not enough data
+

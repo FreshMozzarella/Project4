@@ -10,14 +10,13 @@ function MapLegend({ legendStructure, colorMapping }) {
     <Box 
       sx={{ 
         p: 1, 
-        border: '1px solid #ccc', 
-        bgcolor: 'white', 
+        border: '1px solid #ccc',
         overflowY: 'auto',
       }}
     >
       {Object.entries(legendStructure).map(([ecoName, { vegCNames }]) => (
         <Box key={ecoName} sx={{ mb: 2 }}> {/* Replaces .eco-name-section */}
-          <Typography variant="h6" gutterBottom>{ecoName}</Typography>
+          <Typography variant="h6" gutterBottom textAlign='center'>{ecoName}</Typography>
           <Grid container spacing={1}>
             {vegCNames.map(vegCName => (
               <Grid item xs={6} key={vegCName}>

@@ -56,7 +56,10 @@ export default function AirQuality() {
     <Container>
       <Card>
         <CardContent>
-          <Typography variant="h5" component="div" gutterBottom style={{ fontWeight: 500 }}>
+          <Typography variant="h5" component="div" 
+          gutterBottom 
+          style={{ fontWeight: 500 }}
+          textAlign='center'>
             Air Quality
           </Typography>
           <Divider variant="middle" />
@@ -88,7 +91,7 @@ export default function AirQuality() {
             <strong>Pressure:</strong> {pr} hPa ({pr >= 1000 ? 'Normal' : 'Low'})
           </Typography>
           <Divider variant="middle" />
-          <Typography variant="body1" component="p" gutterBottom style={{ fontWeight: 300 }}>
+          <Typography variant="body1" component="p" gutterBottom style={{ fontWeight: 300 }}> {/* will use Typography component that mimics a p component which uses a bottom margin with a fontWeight style of 300 */}
             <strong>Humidity:</strong> {hu} %
           </Typography>
           <Divider variant="middle" />

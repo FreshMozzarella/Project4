@@ -7,14 +7,14 @@ export default function Footer(){
         <Box sx={{ bgcolor: 'background.paper', p: 6, mt: 'auto' }}>
           <Container maxWidth="sm">
             <Typography variant="body1" align="center">
-              Created by Your Name
+              Created by Alec T
             </Typography>
             <Typography variant="body2" color="text.secondary" align="center">
-              <Link color="inherit" href="#" target="_blank" rel="noopener noreferrer">
+              <Link color="inherit" href="https://github.com/FreshMozzarella" target="_blank" rel="noopener noreferrer">
                 GitHub
               </Link>{' '}
               |{' '}
-              <Link color="inherit" href="#" target="_blank" rel="noopener noreferrer">
+              <Link color="inherit" href="https://main--scintillating-starburst-67bbaa.netlify.app/" target="_blank" rel="noopener noreferrer">
                 Portfolio
               </Link>
             </Typography>

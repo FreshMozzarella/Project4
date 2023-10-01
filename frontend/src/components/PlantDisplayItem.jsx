@@ -22,7 +22,7 @@ function PlantDisplayItem({ plantName }) {
       })
       .then((data) => {
 
-      console.log('Received Data: ', data);
+      
         setPlantData(data);
       })
       .catch((error) => {

@@ -5,7 +5,7 @@ export async function getAnimals(){
         const data = await animalApi.index();
         return data;
     } catch (error) {
-        console.log(error)
+        
         return error;
     }
 }

@@ -17,7 +17,6 @@ function constructUrl(base, endpoint, params = {}) {
 router.get('/get-plant-info/:plantName', async (req, res) => {
   try {
     const plantName = req.params.plantName;
-    console.log('Received request for plant: ', plantName);
 
     const tokenResponse = await fetch(TREFLE_AUTH_URL, {
       method: 'POST',
@@ -33,12 +32,12 @@ router.get('/get-plant-info/:plantName', async (req, res) => {
     const params = type === 'scientific' ? { token, 'filter[scientific_name]': plantName } : { token, q: plantName };
 
     const plantUrl = constructUrl(TREFLE_BASE_URL, endpoint, params);
-    console.log('Requested URL:', plantUrl.href); // Log the requested URL
+  
     const plantResponse = await fetch(plantUrl);
     if (!plantResponse.ok) throw new Error(`Error fetching plant data: ${plantResponse.statusText}`);
 
     const plantData = await plantResponse.json();
-    console.log('Received Plant Data:', plantData);
+    
     if (!plantData.data || plantData.data.length === 0) return res.status(404).json({ error: 'No plant data found' });
 
     const plantInfo = plantData.data[0];
@@ -77,7 +76,7 @@ router.get('/get-plant-info/:plantName', async (req, res) => {
 router.get('/nearestStation', async (req, res) => {
   const lat = 37.2982; // Latitude for Zion National Park, Utah
   const lon = -113.0263; // Longitude for Zion National Park, Utah
-  const apiKey = IQ_AIR_API_KEY; // Your API key from IQAir
+  const apiKey = IQ_AIR_API_KEY; 
   
   try {
     
@@ -152,8 +151,6 @@ router.get('/allParkInfo', async (req, res) => {
         }
         const thingsToDoData = await thingsToDoResponse.json();
 
-       // Sanitize the HTML content in the descriptions
-
     // Process and sanitize data before sending to frontend
     const processedEvents = data.data.map(event => ({
       title: event.title,
@@ -172,14 +169,14 @@ router.get('/allParkInfo', async (req, res) => {
     const processedAlerts = alertsData.data.map(alert => ({
       url: alert.url,
       title: alert.title,
-      description: sanitizeHtml(alert.description), // sanitize HTML content if needed
+      description: sanitizeHtml(alert.description), 
     }));
 
     const processedThingsToDo = thingsToDoData.data.map(thingToDo => ({
       location: thingToDo.location,
       url: thingToDo.url,
       title: thingToDo.title,
-      description: sanitizeHtml(thingToDo.longDescription), // sanitize HTML content
+      description: sanitizeHtml(thingToDo.longDescription), 
       duration: thingToDo.duration,
       activities: thingToDo.activities.map(activity => activity.name), // extracting the names of activities
       images: thingToDo.images.map(image => image.url), // extracting image urls

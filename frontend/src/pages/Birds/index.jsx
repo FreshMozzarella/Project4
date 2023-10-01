@@ -30,7 +30,7 @@ export default function Birds() {
 
   return (
     <div>
-      <Typography variant="h2" gutterBottom component="div" style={{ fontFamily: 'Roboto', fontWeight: 500 }}>
+      <Typography variant="h2" gutterBottom component="div" style={{ fontFamily: 'Roboto', fontWeight: 500 }} textAlign='center'>
         Common Birds in the Area:
       </Typography>
 

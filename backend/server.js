@@ -26,7 +26,7 @@ const app = express()
 // MIDDLEWARE
 ////////////////////////////////
 
-// mount express urlencoded - body parser - x-www-urlencoded data (process data from form submission)
+
 
 app.use(express.urlencoded({extended: true}))
 // mount express JSON body parser

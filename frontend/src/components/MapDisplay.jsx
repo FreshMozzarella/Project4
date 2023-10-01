@@ -47,17 +47,15 @@ function MapDisplay({ vegCName, setVegCName, secondVegCName, setSecondVegCName, 
     };
     setSelectedArea(selectedArea);
     setModalOpen(true);
-    console.log("vegCName in MapDisplay:", vegCName);
-    console.log("secondVegCName in MapDisplay:", secondVegCName);
 
     // New Logic for Extracting and Sanitizing the plant names.
     if (properties && properties.VEG_CNAME) {
       const phrases = properties.VEG_CNAME.split('/');
-      console.log('Phrases:', phrases);
+      
       phrases.forEach((phrase, index) => {
-        console.log('Current Phrase:', phrase);
+        
         const plantName = extractPlantName(phrase);
-        console.log('Extracted Plant Name:', plantName);
+        
 
         // If plantName includes comma, split it into two different names.
         if (plantName.includes(',')) {
@@ -79,8 +77,7 @@ function MapDisplay({ vegCName, setVegCName, secondVegCName, setSecondVegCName, 
       .then(response => response.json())
       .then(data => {
         const { colorMapping, legendStructure } = assignColorToVegetation(data);
-        console.log('Assigned Color Mapping: ', colorMapping);
-        console.log('Assigned Legend Structure: ', legendStructure);
+        
         setColorMapping(colorMapping);
         setLegendStructure(legendStructure);
         setGeoData(data);  // Setting geoData state here for GeoJSON rendering

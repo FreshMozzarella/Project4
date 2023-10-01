@@ -24,30 +24,36 @@ const ECO_NAME_THEMES = {
   export const assignColorToVegetation = (geoData) => {
     let colorMapping = {};
     let legendStructure = {};
-    let colorAssignedCount = {};
-
+  
     geoData.features.forEach(feature => {
         const vegCName = feature.properties.VEG_CNAME;
         const ecoName = feature.properties.ECO_NAME;
         const ecology = feature.properties.ECOLOGY;
-        
+    
         let assignedColor;
-        
+    
         const ecoNameThemeKey = Object.keys(ECO_NAME_THEMES).find(key => ecoName.includes(key));
-        
+    
         if (ecoNameThemeKey) {
             if (!legendStructure[ecoNameThemeKey]) {
                 legendStructure[ecoNameThemeKey] = {
                     assignedColors: [],
                     vegCNames: []
                 };
-                colorAssignedCount[ecoNameThemeKey] = 0; // Initialize count for this theme
             }
-            
-            const colorIndex = colorAssignedCount[ecoNameThemeKey] % ECO_NAME_THEMES[ecoNameThemeKey].length;
-            assignedColor = ECO_NAME_THEMES[ecoNameThemeKey][colorIndex];
-            colorAssignedCount[ecoNameThemeKey] += 1; // Update count for this theme
-            
+    
+            // Available colors are the colors in the theme that haven't been assigned yet
+            const availableColors = ECO_NAME_THEMES[ecoNameThemeKey].filter(color => !legendStructure[ecoNameThemeKey].assignedColors.includes(color));
+    
+            // If we have used all available colors, then reset available colors to all colors in the theme
+            if (availableColors.length === 0) {
+                legendStructure[ecoNameThemeKey].assignedColors = [];
+                assignedColor = ECO_NAME_THEMES[ecoNameThemeKey][0]; // assign the first color in the theme
+            } else {
+                assignedColor = availableColors[0]; // assign the first available color
+            }
+    
+            legendStructure[ecoNameThemeKey].assignedColors.push(assignedColor);
             if (!legendStructure[ecoNameThemeKey].vegCNames.includes(vegCName)) {
                 legendStructure[ecoNameThemeKey].vegCNames.push(vegCName);
             }
@@ -56,10 +62,11 @@ const ECO_NAME_THEMES = {
         } else {
             assignedColor = ECOLOGY_COLORS[ecology] || 'black';
         }
-        
+    
         colorMapping[vegCName] = assignedColor;
     });
     
     return { colorMapping, legendStructure };
-};
+  };
+  
 
