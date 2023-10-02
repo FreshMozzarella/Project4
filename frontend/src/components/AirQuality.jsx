@@ -51,7 +51,8 @@ export default function AirQuality() {
     wd,
     ic,
   } = data.current.weather;
-
+  console.log('IC:', ic);
+  console.log('Icon Path:', weatherIcons[ic]?.icon);
   return (
     <Container>
       <Card>

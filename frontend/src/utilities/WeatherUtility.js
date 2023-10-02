@@ -7,7 +7,6 @@ export const weatherIcons = {
         icon: "/weatherIcons/01n.png",
         description: "clear sky (night)"
     },
-    // ... add other icons here
     "02d": {
         icon: "/weatherIcons/02d.png",
         description: "few clouds(day)"
@@ -23,6 +22,10 @@ export const weatherIcons = {
     "04d": {
         icon: "/weatherIcons/04d.png",
         description: "broken clouds"
+    },
+    "04n": {
+        icon: "/weatherIcons/04n.png",
+        description: "broken clouds(night)"
     },
     "09d": {
         icon: "/weatherIcons/09d.png",
